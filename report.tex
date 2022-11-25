@@ -1,0 +1,437 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage[a4paper, total={7in, 9in}]{geometry}
+\usepackage{calc}
+\usepackage{eso-pic}
+
+\newlength{\PageFrameTopMargin}
+\newlength{\PageFrameBottomMargin}
+\newlength{\PageFrameLeftMargin}
+\newlength{\PageFrameRightMargin}
+
+\setlength{\PageFrameTopMargin}{1cm}
+\setlength{\PageFrameBottomMargin}{1cm}
+\setlength{\PageFrameLeftMargin}{1cm}
+\setlength{\PageFrameRightMargin}{1cm}
+
+\makeatletter
+
+\newlength{\Page@FrameHeight}
+\newlength{\Page@FrameWidth}
+
+\AddToShipoutPicture{
+  \thinlines
+  \setlength{\Page@FrameHeight}{\paperheight-\PageFrameTopMargin-\PageFrameBottomMargin}
+  \setlength{\Page@FrameWidth}{\paperwidth-\PageFrameLeftMargin-\PageFrameRightMargin}
+  \put(\strip@pt\PageFrameLeftMargin,\strip@pt\PageFrameTopMargin){
+    \framebox(\strip@pt\Page@FrameWidth, \strip@pt\Page@FrameHeight){}}}
+
+\makeatother
+\let\cleardoublepage\clearpage 
+\begin{document}
+\begin{center}
+	\onehalfspacing
+	\textbf{\large MOTILAL NEHRU NATIONAL INSTITUTE OF TECHNOLOGY ALLAHABAD, INDIA-211004\\} 
+		\includegraphics[]{logo.jpg}
+		\end{center}
+		\begin{center}
+			\textbf{A PROJECT REPORT\\ ON} 
+			\break
+			\textbf{
+				\\E-Nursery
+				\\(An E-commerce project)
+			}  
+			\\ Submitted to \\ 
+			\textbf{M.M Gore} \break
+			\onehalfspacing
+			\\ In Partial fulfilment of the Requirement for the Award of
+			\textbf{
+				\\MASTER OF COMPUTER APPLICATIONS 
+				\\MNNIT ALLAHABAD 
+				\\2020-2023.\\
+			}   
+		\end{center}
+		\vfill
+		\begin{flushright}
+			\onehalfspacing
+			\textbf{\underline{Submitted By }}
+			\\Asmit Mohan(2020CA018)
+			\\Harinandan Kumar(2020CA030)
+			\\Krishanu dev(2020CA035)
+			\\Mayank Kumar Pathak(2020CA040)
+			\\Neelu Sharma(2020CA047)
+			\\Priti Kumari(2020CA062)
+			\\Ritvik Raj(2020CA071)
+			\\Rashmi Bharti(2020CA067)
+			\\Yash Dhawan(2020CA107)
+		\end{flushright}
+												
+		\pagebreak
+												    
+		\begin{center}
+			\includegraphics[width=0.25\textwidth]{logo.jpg}
+			\break
+			\onehalfspacing
+			\textbf{\large Department of Computer Science and Engineering,\\ Motilal Nehru National Institute Technology \\ Allahabad, Prayagraj - 211004}
+		\end{center}
+												
+		\vspace{0.2in}
+												
+		\begin{center}
+			\textbf{\Large Certificate}     
+		\end{center}
+												
+		\begin{center}
+			\onehalfspacing
+			\large   This is to certify that the project titled \textbf{“E-Nursery”} has been
+			developed by \textbf{Asmit Mohan(2020CA018), Harinandan Kumar(2020CA030), Krishanu dev(2020CA035), Mayank Kumar Pathak(2020CA040), Neelu Sharma(2020CA047), Priti Kumari(2020CA062), Ritvik Raj(2020CA071), Rashmi Bharti(2020CA067), Yash Dhawan(2020CA107)}  under my supervision in partial fulfilment for the award of
+			degree in \textbf{Master of Computer Applications (MCA)}  for the session
+			2020-23.
+		\end{center}
+		\vfill
+		\onehalfspacing
+		\textbf{\underline{\large Team Member}} \hfill \textbf{\underline{\large Project Guide}}
+		\\Asmit Mohan(2020CA018) \hfill M.M Gore
+		\\Harinandan Kumar(2020CA030)
+		\\Krishanu dev(2020CA035)
+		\\Mayank Kumar Pathak(2020CA040)
+		\\Neelu Sharma(2020CA047)
+		\\Priti Kumari(2020CA062)
+		\\Ritvik Raj(2020CA071)
+		\\Rashmi Bharti(2020CA067)
+		\\Yash Dhawan(2020CA107)
+												
+		\pagebreak
+		\begin{center}
+			\textbf{\Large UNDERTAKING}
+		\end{center}
+		\begin{center}
+			\doublespacing
+			\large
+			\vspace{1.9in}
+			The work presented in our Project titled \textbf{E-Nursery} , submitted to
+			Computer Science and Engineering Department, \textbf{Motilal Nehru
+			National Institute of Technology, Allahabad, Prayagraj} for the award
+			of Master of Computer Applications, is our original work. We have
+			neither plagiarized nor submitted the same work for the award of
+			any other degree. In case this undertaking is found incorrect, we
+			accept that our degree maybe withdrawn.
+		\end{center}
+												
+		\vfill
+		\textbf{\underline{\large Team Member}} 
+		\onehalfspacing
+		\\Asmit Mohan(2020CA018) 
+		\\Harinandan Kumar(2020CA030)
+		\\Krishanu dev(2020CA035)
+		\\Mayank Kumar Pathak(2020CA040)
+		\\Neelu Sharma(2020CA047)
+		\\Priti Kumari(2020CA062)
+		\\Ritvik Raj(2020CA071)
+		\\Rashmi Bharti(2020CA067)
+		\\Yash Dhawan(2020CA107)
+												
+		\pagebreak
+		\begin{center}
+			\doublespacing
+			\textbf{\Large Acknowledgement}
+		\end{center}
+		\vspace{1.3in}
+		\begin{center}
+			\doublespacing
+			We are profoundly grateful to \textbf{M.M Gore} for his expert guidance
+			and continuous encouragement throughout to see that this project
+			rights its target since its commencement to its completion.
+		\end{center}
+										
+		\begin{center}
+			\doublespacing
+			I have always considered project development a challenging task that
+			requires lot of concentration, hard work, and understanding several
+			concepts related to project. I have learnt various new concepts,
+			programming styles and above all I gain wonderful experience of project
+			development and presentation.
+		\end{center}
+										
+		\begin{center}
+			\doublespacing
+			At last, we must express our sincere heartfelt gratitude to all the staff
+			members of Computer Science and Engineering Department who
+			helped us directly or indirectly during this course of work. 
+		\end{center}
+		\vfill
+		\textbf{\underline{\large Team Member}} 
+		\onehalfspacing
+		\\Asmit Mohan(2020CA018) 
+		\\Harinandan Kumar(2020CA030)
+		\\Krishanu dev(2020CA035)
+		\\Mayank Kumar Pathak(2020CA040)
+		\\Neelu Sharma(2020CA047)
+		\\Priti Kumari(2020CA062)
+		\\Ritvik Raj(2020CA071)
+		\\Rashmi Bharti(2020CA067)
+		\\Yash Dhawan(2020CA107)
+										
+		\pagebreak
+								
+		\onehalfspacing
+		\begin{center}
+			\doublespacing
+			\Large
+			\textbf{ABSTRACT}
+		\end{center}
+										
+		\begin{flushleft}
+			\doublespacing
+			This project is aimed at developing a Web application that depicts online Shopping of plants, seeds, fertilizers, flowers etc. products.Using this software, companies can improve the efficiency of
+			their services. Online Shopping is one of the applications to improve the marketing and sale of the company’s products. This web
+			application involves all the basic features of the online shopping.
+		\end{flushleft}
+										
+		\pagebreak
+		\tableofcontents
+		\chapter{Introduction}
+		\section{Introduction to the System}
+		\paragraph{
+			This project is aimed at developing a Web application that depicts online Shopping of plants, seeds, fertilizers, flowers etc. products.Using this software, companies can improve the efficiency of their services. Online Shopping is one of the applications to improve the marketing and sale of the company’s products. This web application involves all the basic features of the online shopping.
+		}
+		\section{Problem Definition}
+		\paragraph
+		{
+			Managing your Online Nursery Store System may seem tricky, but this is part of Customer Service System (application support direct contact with customer)
+		}
+		\section{Aim}
+		\paragraph
+		{
+			To manage online shopping of plants, flowers, seeds and fertilizers
+		}
+		\section{Objective}
+		\paragraph
+		{
+			This software helps customer to find different nursery products according category, occasion, price and subcategory. It is designed such a way that one can view all the updates of the products from any place through online. The software will help in easy maintaining and updating products in the website for the administrator. Also quick and easy comparison of different products for the customers.
+		}
+										
+		\chapter{Hardware and Software requirement}
+		\section{Introduction}
+		\paragraph
+		{
+			In this chapter we mentioned the software and hardware requirements, which are necessary for successfully running this system. The major element in building systems is selecting compatible hardware and software. The system analyst has to determine what software package is best for the “E Nursery System” and, where software is not an issue, the kind of hardware and peripherals needed for the final conversion.
+		}
+		\section{System environment}
+		\paragraph
+		{
+			After analysis, some resources are required to convert the abstract system into the real one. All the resources, which accomplish a robust The hardware and software selection begins with requirement analysis, followed by a request for proposal and vendor evaluation.
+		}
+		\paragraph
+		{
+			Software and real system are identified. According to the provided functional specification all the technologies and its capacities are identified. Basic functions and procedures and methodologies are prepared to implement. Some of the Basic requirements such as hardware and software are described as follows: -
+		}
+		\paragraph{\textbf{Hardware and Software Specification}}
+		\section{Software requirements}
+		\begin{itemize}
+			\item Framework: Django
+			\item IDE : Pycharm/Atom
+			\item Client Side Technologies: HTML, CSS, JavaScript , Bootstrap
+			\item Server Side Technologies: Python
+			\item Data Base Server: Sqlite
+			\item Operating System: Microsoft Windows/Linux 
+		\end{itemize}
+		\section{Hardware requirements}
+		\begin{itemize}
+			\item Processor: Pentium-III (or) Higher
+			\item Ram: 64MB (or) Higher
+			\item Hard disk: 80GB (or) Higher
+		\end{itemize}
+								  
+		\chapter{System Design}
+		\section{Use Case Diagram}
+		\begin{center}
+			\includegraphics{admin system use case.jpg}
+			\includegraphics[scale=0.6]{user system use case.jpg}
+		\end{center}
+		\section{ER Diagram}
+		\begin{center} 
+			\includegraphics[]{ERD.jpg}
+			\\
+			\textbf{\underline{ERD for E-Nursery}}   
+		\end{center}
+		\chapter{Information Flow Diagram (IFD)}
+		\begin{center} 
+			\includegraphics[scale=0.5]{IFD.jpeg}
+			\\
+			\textbf{\underline{IFD for E-Nursery}}   
+		\end{center}
+								
+		\chapter{User Screens}
+		\begin{center} 
+			\includegraphics[scale=0.25]{Landing_page.png}
+			\\
+			\textbf{\underline{Landing Page}}   
+		\end{center}
+				  
+		\begin{center}
+			\includegraphics[scale=0.25]{login.png}
+			\\
+			\textbf{\underline{login Page}}
+		\end{center}
+				  
+		\begin{center}
+			\includegraphics[scale=0.25]{sign_up.png}
+			\\
+			\textbf{\underline{signup Page}}
+		\end{center}
+						
+		\begin{center}
+			\includegraphics[scale=0.25]{Forget_password.png}
+			\\
+			\textbf{\underline{Forget password Page}}
+		\end{center}
+				  
+		\begin{center}
+			\includegraphics[scale=0.25]{change_password.png}
+			\\
+			\textbf{\underline{change password Page}}
+		\end{center}
+						           
+		\begin{center}
+			\includegraphics[scale=0.25]{Email_authentication.png}
+			\\
+			\textbf{\underline{Email authentication Page}}
+		\end{center}
+						  
+		\begin{center}
+			\includegraphics[scale=0.25]{Profile.png}
+			\\
+			\textbf{\underline{Profile Page}}
+		\end{center}
+				
+		\begin{center}
+			\includegraphics[scale=0.25]{All_Products.png}
+			\\
+			\textbf{\underline{All Products Page}}
+		\end{center}
+				
+		\begin{center}
+			\includegraphics[scale=0.25]{Filter_search.png}
+			\\
+			\textbf{\underline{Filter search Page}}
+		\end{center}
+		\begin{center}
+			\includegraphics[scale=0.25]{Booking_detail.png}
+			\\
+			\textbf{\underline{Booking detail Page}}
+		\end{center}
+		\begin{center}
+			\includegraphics[scale=0.25]{Booking_history.png}
+			\\
+			\textbf{\underline{Booking history Page}}
+		\end{center}
+		\begin{center}
+			\includegraphics[scale=0.25]{cart.png}
+			\\
+			\textbf{\underline{cart Page}}
+		\end{center}
+		\begin{center}
+			\includegraphics[scale=0.25]{Payment_gateway.png}
+			\\
+			\textbf{\underline{Payment gateway Page}}
+		\end{center}
+		\begin{center}
+			\includegraphics[scale=0.25]{payment_success_window.png}
+			\\
+			\textbf{\underline{payment success window Page}}
+		\end{center}
+		\begin{center}
+			\includegraphics[scale=0.25]{Feedback.png}
+			\\
+			\textbf{\underline{Feedback Page}}
+		\end{center}
+		\begin{center}
+			\includegraphics[scale=0.25]{Contact-us.png}
+			\\
+			\textbf{\underline{Contact us Page}}
+		\end{center}
+		\begin{center}
+			\includegraphics[scale=0.25]{About_us.png}
+			\\
+			\textbf{\underline{About us Page}}
+		\end{center}
+		\chapter{Conclusion}
+		\paragraph
+		{
+			The project entitled “E Nursery Shop” is developed using HTML, CSS and javascript as frontend and Python programming language and Sqlite database in backend to computerize the process of online shopping. This project covers only the basic features required.
+		}
+		\section{Features of “E Nursery”}
+		\paragraph
+		{
+			“E Nursery System” provides various features, which complement the information system and increase the productivity of the system. These features make the system easily usable and convenient.  Some of the important features included are listed as follows:
+		}
+		\begin{itemize}
+			\item Intelligent User Forms Design
+			      \begin{itemize}
+			      	\item Data access and manipulation through same forms
+			      	\item Access to most required information
+			      \end{itemize}
+			                  
+			\item Data Security 
+			\item Restrictive data access, as per login assigned only.
+			\item Organized and structured storage of facts.
+			\item Strategic Planning made easy.
+			\item No decay of old Records.
+			\item Exact financial position of the Business.
+		\end{itemize}
+		        
+		\section{Benefits Accrued from “E Nursery”}
+		\begin{itemize}
+			\item Intelligent User Forms Design
+			      \begin{itemize}
+			      	\item Data access and manipulation through same forms
+			      	\item Access to most required information
+			      \end{itemize}
+			                  
+			\item Data Security 
+			\item Restrictive data access, as per login assigned only.
+			\item Organized and structured storage of facts.
+			\item Strategic Planning made easy.
+			\item No decay of old Records.
+			\item Exact financial position of the Business.
+		\end{itemize}
+		\section{Limitations of  “E Nursery”}
+		\paragraph
+		{
+			Besides the above achievements and the successful completion of the project, we still feel the project has some limitations, listed as below:
+		}
+		        
+		\begin{enumerate}
+			\item It is not a large scale system. 
+			\item Only limited information provided by this system. 
+			\item Since it is an online project, customers need internet connection to buy products
+			\item People who are not familiar with computers can’t use this software.
+		\end{enumerate}
+		\chapter{Future Scope}
+		\paragraph
+		{
+			This web application involves almost all the features of the online shopping. The future implementation will be online help for the customers and chatting with website administrator.
+		}
+		    
+		\begin{thebibliography}{20}
+			
+			\bibitem{wikipedia} wikipedia, https://en.wikipedia.org/wiki/Plant\_nursery
+			    
+			\bibitem{Geeks for Geek} Geeks for Geek, https://www.geeksforgeeks.org/python-django/
+			    
+			\bibitem{javatpoint} javatpoint, https://www.javatpoint.com
+			    
+			\bibitem{pythonOfficial} Python Official, https://www.python.org/
+			    
+			\bibitem{tutorialspoint}tutorialspoint,  https://www.tutorialspoint/
+			\bibitem{REFERENCE BOOKS}  REFERENCE BOOKS.Two scoops of Django for 1.11 by Daniel Greenfeld’s and Audrey Greenfield
+			\bibitem{REFERENCE BOOKS}  REFERENCE BOOKS.Lightweight Django by Elman and Mark Lavin
+		\end{thebibliography}
+\end{document}
